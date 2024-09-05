@@ -1,5 +1,5 @@
 // Підключаємо gulp
-var gulp = require("gulp");
+let gulp = require("gulp");
 // Створюємо тестовий таск
 gulp.task('testTask', function (done) {
     console.log('This is a test task!');
