@@ -2,7 +2,7 @@
 
 
 import gulp from 'gulp';
-import sass from 'gulp-sass';
+//import sass from 'gulp-sass';
 import cssnano from 'gulp-cssnano';
 import autoprefixer from 'gulp-autoprefixer';
 import imagemin from 'gulp-imagemin';
@@ -16,21 +16,14 @@ import {rimraf} from 'rimraf'; // Add Rimraf
 //const compileSass = sass(sassCompiler);
 
 //Use Rimraf to clean dist directory
-gulp.task('clean', function (cb) {
-    rimraf('dist', { glob: false }).then(() => cb()).catch(cb);});
+//gulp.task('clean', function (cb) {
+//    rimraf('dist', { glob: false }).then(() => cb()).catch(cb);});
 
-gulp.task('browserSync', function (cb) {
-    browserSync.init({
-        server: {
-            baseDir: 'dist'//'app'
-        },
-    });
-    cb(); // сигналізуємо про завершення
-});
 
 gulp.task('html', function () {
     return gulp.src('app/*.html')
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream())
 });
 
 gulp.task('sass', function () {
@@ -52,7 +45,8 @@ gulp.task('scripts', function () {
         .pipe(concat('scripts.js'))
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/js'))
+        .pipe(browserSync.stream())
 });
 
 gulp.task('imgs', function () {
@@ -66,10 +60,16 @@ gulp.task('imgs', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('app/*.html', gulp.series('html'));
+    browserSync.init({
+        server: {
+            baseDir: 'app'
+        },
+    })
+    gulp.watch('app/*.html', gulp.series('html')).on('change',browserSync.reload);
     gulp.watch('app/js/*.js', gulp.series('scripts'));
     gulp.watch('app/sass/*.sass', gulp.series('sass'));
     gulp.watch('app/img/*.+(jpg|jpeg|png|gif)', gulp.series('imgs'));
 });
 
-gulp.task('default', gulp.series('clean', gulp.series('browserSync', 'html', 'sass', 'scripts', 'imgs' , 'watch')));
+//+clean -> + ) in the end
+gulp.task('default',/*gulp.series('clean', */gulp.series( 'html', 'sass', 'scripts', 'imgs' , 'watch'));
