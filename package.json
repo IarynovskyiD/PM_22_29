@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "bootstrap": "^5.3.3",
     "browser-sync": "^3.0.2",
     "eslint": "^9.9.1",
     "gulp": "^5.0.0",
