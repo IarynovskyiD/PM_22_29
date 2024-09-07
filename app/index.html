@@ -4,129 +4,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ralph Garcia Resume</title>
-    <link href="bootstrap/dist1/css/bootstrap.min.css" rel="stylesheet">
+    <title>Resume with Adjustments</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #edf1f4;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #3a3b74;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #60a3bc;
+        }
+
+        .description {
+            background-color: #60a3bc;
+            color: white;
+            padding: 20px;
+        }
+
+        .quote {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .photo img {
+            border-radius: 50%;
+        }
+
+        .language-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #edf1f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #3a3b74;
+            font-weight: bold;
+            border: 2px solid #60a3bc;
+        }
+
+        .progress-bar {
+            background-color: #60a3bc;
+        }
+
+        .references {
+            margin-top: 20px;
+        }
+
+        .date-place {
+            width: 30%;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .job-text {
+            width: 70%;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            background-color: #edf1f4;
+            padding: 10px;
+        }
+
+        .skills-text, .hobbies-text {
+            width: 30%;
+        }
+
+        .skills-bar, .hobbies-bar {
+            width: 70%;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <!-- Header Section -->
-    <header class="header-left bg-primary text-white p-4">
-        <h1>RALPH S. GARCIA</h1>
-        <p>Graphic & Web Designer</p>
-    </header>
 
-    <!-- Profile Section -->
-    <section class="text-center my-4">
-        <img src="path-to-profile-image.jpg" alt="Ralph Garcia" class="profile-pic">
-        <p class="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
-    </section>
-
-    <!-- Main Content -->
-    <div class="row">
-        <!-- Left Column: Education and Experience -->
-        <div class="col-md-8">
-            <!-- Education -->
-            <section>
-                <h3 class="section-title">Education</h3>
-                <div>
-                    <h5>Stanford University</h5>
-                    <p>Master Degree Graduate (2011 - 2013)</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing industry...</p>
-                </div>
-                <div>
-                    <h5>Chicago University</h5>
-                    <p>Bachelor Degree (2007 - 2010)</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing industry...</p>
-                </div>
-            </section>
-
-            <!-- Experience -->
-            <section>
-                <h3 class="section-title">Job Experience</h3>
-                <div>
-                    <h5>Creative Agency</h5>
-                    <p>Senior Web Designer (2020 - Present)</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing industry...</p>
-                </div>
-                <div>
-                    <h5>Creative Market</h5>
-                    <p>Graphic Designer (2015 - 2020)</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing industry...</p>
-                </div>
-                <div>
-                    <h5>Marketing Agency</h5>
-                    <p>Marketing Manager (2013 - 2015)</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing industry...</p>
-                </div>
-            </section>
-        </div>iv class="col-md-4">
-    <!-- Skills -->
-    <section>
-        <h3 class="section-title">Skills</h3>
-        <p>Adobe Photoshop</p>
-        <div class="skill-bar">
-            <div class="skill-level" style="width: 90%;"></div>
-        </div>
-        <p>Adobe Illustrator</p>
-        <div class="skill-bar">
-            <div class="skill-level" style="width: 80%;"></div>
-        </div>
-        <p>Microsoft Word</p>
-        <div class="skill-bar">
-            <div class="skill-level" style="width: 75%;"></div>
-        </div>
-        <p>HTML5/CSS3</p>
-        <div class="skill-bar">
-            <div class="skill-level" style="width: 85%;"></div>
-        </div>
-    </section>
-
-    <!-- Hobbies -->
-    <section>
-        <h3 class="section-title">Hobbies</h3>
-        <ul>
-            <li>Book Reading</li>
-            <li>Travelling</li>
-            <li>Playing Chess</li>
-            <li>Graphic Design</li>
-        </ul>
-    </section>
-
-    <!-- Languages -->
-    <section>
-        <h3 class="section-title">Languages</h3>
-        <p>English - 95%</p>
-        <p>German - 60%</p>
-        <p>Spanish - 45%</p>
-    </section>
-
-    <!-- References -->
-    <section>
-        <h3 class="section-title">References</h3>
-        <div>
-            <p><strong>Darwin B. Magana</strong></p>
-            <p>Tel: +1-970-533-3393</p>
-            <p>Email: darwin@example.com</p>
-        </div>
-        <div>
-            <p><strong>Robert J. Belvin</strong></p>
-            <p>Tel: +1-908-987-5103</p>
-            <p>Email: robert@example.com</p>
-        </div>
-    </section>
-</div>
-</div>
-
-<!-- Contact Info -->
-<footer class="text-center mt-4">
-    <div class="contact-info">
-        <p><i class="fas fa-phone"></i> +1-718-310-5588</p>
-        <p><i class="fas fa-globe"></i> www.yourwebsite.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> 769 Prudence Street, Lincoln Park, MI 48146</p>
+<!-- Header Section -->
+<div class="header container">
+    <div>
+        <div class="name">RALPH S. GARCIA</div>
+        <div class="title">GRAPHIC & WEB DESIGNER</div>
     </div>
-</footer>
+    <div class="photo">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="img-fluid">
+    </div>
 </div>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Description Section -->
+<div class="description container mt-4">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <p class="quote">"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."</p>
+</div>
+
+<!-- Resume Section -->
+<div class="container mt-4">
+    <div class="row">
+        <!-- Left Column: Education & Job Experience -->
+        <div class="col-md-6">
+            <h3 class="fw-bold">EDUCATION</h3>
+            <div class="d-flex mb-4">
+                <div class="date-place text-start">2011 - 2013<br>Stanford University</div>
+                <div class="job-text">
+                    <p>Master Degree Graduate in Design</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+            </div>
+            <div class="d-flex mb-4">
+                <div class="date-place text-start">2007 - 2010<br>Chicago University</div>
+                <div class="job-text">
+                    <p>Bachelor Degree in Design</p>
+                    <p>Lorem Ipsum has been the industry's standard dummy text.</p>
+                </div>
+            </div>
+
+            <h3 class="fw-bold">JOB EXPERIENCE</h3>
+            <div class="d-flex mb-4">
+                <div class="date-place text-start">2020 - Present<br>Creative Agency, Chicago</div>
+                <div class="job-text">
+                    <p>Senior Web Designer</p>
+                    <p>Lorem Ipsum has been the industry's standard dummy text since the 1500s.</p>
+                </div>
+            </div>
+            <div class="d-flex mb-4">
+                <div class="date-place text-start">2015 - 2020<br>Creative Market, UK</div>
+                <div class="job-text">
+                    <p>Graphic Designer</p>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+            <div class="d-flex mb-4">
+                <div class="date-place text-start">2013 - 2015<br>Marketing Agency, UK</div>
+                <div class="job-text">
+                    <p>Marketing Manager</p>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <img src="https://via.placeholder.com/100" alt="Job Photo" class="img-fluid mt-2">
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Skills, Hobbies, Languages, References -->
+        <div class="col-md-6">
+            <h3 class="fw-bold">SKILLS</h3>
+            <div class="d-flex align-items-center mb-3">
+                <div class="skills-text">Adobe Photoshop</div>
+                <div class="skills-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <div class="skills-text">Adobe Illustrator</div>
+                <div class="skills-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <div class="skills-text">Microsoft Word</div>
+                <div class="skills-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <div class="skills-text">Microsoft PowerPoint</div>
+                <div class="skills-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <div class="skills-text">HTML5/CSS3</div>
+                <div class="skills-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="fw-bold">HOBBIES</h3>
+            <div class="d-flex align-items-center mb-3">
+                <div class="hobbies-text">Book Reading</div>
+                <div class="hobbies-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <div class="hobbies-text">Travelling</div>
+                <div class="hobbies-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <div class="hobbies-text">Playing Chess</div>
+                <div class="hobbies-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <div class="hobbies-text">Painting</div>
+                <div class="hobbies-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <div class="hobbies-text">Graphic Design</div>
+                <div class="hobbies-bar">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="fw-bold">LANGUAGES</h3>
+            <div class="d-flex justify-content-between mb-4">
+                <div class="language-circle">
+                    95%<br>English
+                </div>
+                <div class="language-circle">
+                    60%<br>German
+                </div>
+                <div class="language-circle">
+                    45%<br>Spanish
+                </div>
+            </div>
+
+            <h3 class="fw-bold">REFERENCES</h3>
+            <div class="references">
+                <p><strong>Darwin B. Magana</strong><br>
+                    2813 Shobe Lane Mancos, CO.<br>
+                    Email: darwinmagana@example.com
+                </p>
+                <p><strong>Jane Doe</strong><br>
+                    914 Ivy Street Centennial, CO.<br>
+                    Email: janedoe@example.com
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+

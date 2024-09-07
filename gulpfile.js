@@ -15,14 +15,14 @@ import {rimraf} from 'rimraf'; // Add Rimraf
 //import * as sassCompiler from 'sass';
 //const compileSass = sass(sassCompiler);
 
-//Use Rimraf to clean dist1 directory
+//Use Rimraf to clean dist directory
 //gulp.task('clean', function (cb) {
-//    rimraf('dist1', { glob: false }).then(() => cb()).catch(cb);});
+//    rimraf('dist', { glob: false }).then(() => cb()).catch(cb);});
 
 
 gulp.task('html', function () {
     return gulp.src('app/*.html')
-        .pipe(gulp.dest('dist1'))
+        .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream())
 });
 
@@ -56,7 +56,7 @@ gulp.task('imgs', function () {
             svgoPlugins: [{removeViewBox: false}],
             interlaced: true
         }))
-        .pipe(gulp.dest('dist1/images'));
+        .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('watch', function () {
