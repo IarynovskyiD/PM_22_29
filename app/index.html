@@ -6,42 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume with Adjustments</title>
     <!-- Bootstrap CSS -->
-    <link href="bootstrap/dist1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/css/bootstrap.min.css" rel="stylesheet">
+    <link href="scss/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- Header Section -->
-<div class="container bg-light py-2">
-    <div class="row">
-        <div class="col-md-8">
-            <div>
-                <div class="display-2 fw-bold  text-muted">RALPH S. GARCIA</div>
-                <div class="mb-4" style="color: #5a9996"><h3>Graphic & Web Designer </h3></div>
 
-                <div class="text-white py-3 px-4 " style="background: #5a9996">
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <p class="fst-italic">"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."</p>
+    <div class="container bg-light py-2">
+        <div class="row ">
+            <div class="col-md-8">
+                <div>
+                    <div class="display-2 fw-bold  text-muted">RALPH S. GARCIA</div>
+                    <div class="mb-4 h3" style="color: #5a9996">Graphic & Web Designer</div>
+                </div>
+                <div class="text-white py-3 px-4" style="background: #5a9996">
+                    <div class="container">
+                        <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <p class="fst-italic">"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <!-- Синя смужка за фото, обмежена по висоті блоку з текстом -->
-            <img src="img/black_man_img.jpg" alt="Profile Picture" class="img-fluid position-relative" style="width: 350px; height: 328px; object-fit: cover; ">
+            <div class="col-md-4">
+                <!-- Синя смужка за фото, обмежена по висоті блоку з текстом -->
+                <img src="img/black_man_img.jpg" alt="Profile Picture" class="img-fluid position-relative" style="width: 100%; height: 100%; object-fit: cover; ">
+            </div>
         </div>
     </div>
-</div>
-
-
 
 <!-- Resume Section -->
 <div class="container mt-4">
     <div class="row">
         <!-- Left Column: Education & Job Experience -->
         <div class="col-md-8">
-            <h3 class="fw-bold mb-4">EDUCATION</h3>
+            <h3 class="fw-bold mb-4 section-title">EDUCATION</h3>
             <div class="d-flex  mb-4">
                 <div class="text-muted col-md-3 me-3">
-                    <div class="fw-bold fst-italic">Stanford University</div>
+                    <span class="fw-bold fst-italic">Stanford University</span>
                     <div class="fw-bold" style="color: #5a9996">2011 - 2013</div>
                 </div>
                 <div class="col-md-8">
@@ -63,8 +65,7 @@
                         make a type specimen book.</p>
                 </div>
             </div>
-
-            <h3 class="fw-bold mb-4">JOB EXPERIENCE</h3>
+            <h3 class="fw-bold mb-4 section-title">JOB EXPERIENCE</h3>
             <div class="d-flex mb-4">
                 <div class="text-muted col-md-3 me-3">
                     <div class="fw-bold fst-italic">Creative Agency</div>
@@ -112,25 +113,26 @@
                         make a type specimen book.</p>
                 </div>
             </div>
-
-                <div class="d-flex flex-wrap">
-                    <div class="p-2 border rounded-pill d-flex align-items-center me-4">
-                       +1-718-310-5588
-                    </div>
-                    <div class="p-2 border rounded-pill d-flex align-items-center">
-                        www.yourwebsite.com
-                    </div>
+            <footer class="footer">
+                <div class="footer-item">
+                    <i class="fas fa-phone"></i> <!-- Іконка телефону -->
+                    +1-718-310-5588
                 </div>
-                <div class="d-flex justify-content-start mt-3">
-                    <div class="p-2 border rounded-pill d-flex ">
-                        769 Prudence Street Lincoln Park, MI 48146
-                    </div>
+                <div class="footer-item">
+                    <i class="fas fa-globe"></i> <!-- Іконка вебсайту -->
+                    www.yourwebsite.com
                 </div>
+            </footer>
+            <footer class="footer">
+                <div class="footer-item">
+                    <i class="fas fa-map-marker-alt"></i> <!-- Іконка адреси -->
+                    769 Prudence Street, Lincoln Park, MI 48146
+                </div>
+            </footer>
         </div>
-
         <!-- Right Column: Skills, Hobbies, Languages, References -->
         <div class="col-md-4">
-            <h3 class="fw-bold mb-4">SKILLS</h3>
+            <h3 class="fw-bold mb-4 section-title">SKILLS</h3>
             <div class="mb-3">
                 <div class="d-flex align-items-center mb-2">
                     <div class="me-3 col-md-6">
@@ -162,7 +164,7 @@
                 </div>
             </div>
 
-            <h3 class="fw-bold mb-4">HOBBIES</h3>
+            <h3 class="fw-bold mb-4 section-title">HOBBIES</h3>
             <div class="mb-3">
                 <div class="d-flex align-items-center mb-2">
                     <div class="me-3 col-md-6">
@@ -193,8 +195,7 @@
                     </div>
                 </div>
             </div>
-
-            <h3 class="fw-bold mb-4">LANGUAGES</h3>
+            <h3 class="fw-bold mb-4 section-title">LANGUAGES</h3>
             <div class="d-flex justify-content-between mb-3">
                 <div class="text-center progress-circle text-black rounded-circle p-3" style="width: 100px; height: 100px; background:conic-gradient(#5a9996 0% 95%, #ffffff 95% );">
                     95%<br>English
@@ -207,7 +208,7 @@
                 </div>
             </div>
 
-            <h3 class="fw-bold mb-4">REFERENCES</h3>
+            <h3 class="fw-bold mb-4 section-title">REFERENCES</h3>
             <div>
                 <strong>Darwin B. Magana</strong><br>
                 <div style="color: #5a9996"><strong>2813 Shobe Lane Mancos, CO.</strong><br></div>
