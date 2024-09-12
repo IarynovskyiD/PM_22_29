@@ -9,7 +9,7 @@ import imagemin from 'gulp-imagemin';
 import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
-import browserSync from 'browser-sync'; // Add BrowserSync
+import browserSync from 'browser-sync';
 //import {rimraf} from 'rimraf'; // Add Rimraf
 
 //import * as sassCompiler from 'scss';
@@ -27,8 +27,8 @@ gulp.task('html', function () {
 });
 
 gulp.task('scss', function () {
-    return gulp.src('app/scss/*.scss')
-        .pipe(concat('styles.scss'))
+    return gulp.src('app/scss/*.css')
+        .pipe(concat('style.scss'))
         //.pipe(compileSass().on('error', compileSass.logError))
         .pipe(autoprefixer({
             //overrideBrowserslist: ['last 2 versions'],
