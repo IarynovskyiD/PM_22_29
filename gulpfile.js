@@ -1,8 +1,4 @@
-// Підключаємо gulp
-
-
 import gulp from 'gulp';
-//import scss from 'gulp-scss';
 import cssnano from 'gulp-cssnano';
 import autoprefixer from 'gulp-autoprefixer';
 import imagemin from 'gulp-imagemin';
@@ -10,68 +6,74 @@ import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import browserSync from 'browser-sync';
-//import {rimraf} from 'rimraf'; // Add Rimraf
+import * as sass from 'sass';
+import gulpSass from 'gulp-sass';
 
-//import * as sassCompiler from 'scss';
-//const compileSass = scss(sassCompiler);
+import copy from 'gulp-copy';
 
-//Use Rimraf to clean dist directory
-//gulp.task('clean', function (cb) {
-//    rimraf('dist', { glob: false }).then(() => cb()).catch(cb);});
+const sassCompiler = gulpSass(sass);
 
-
+// Обробка HTML
 gulp.task('html', function () {
     return gulp.src('app/*.html')
         .pipe(gulp.dest('dist'))
-        .pipe(browserSync.stream())
+        .pipe(browserSync.stream());
 });
 
+// Обробка SCSS
 gulp.task('scss', function () {
-    return gulp.src('app/scss/*.css')
-        .pipe(concat('style.scss'))
-        //.pipe(compileSass().on('error', compileSass.logError))
+    return gulp.src('app/scss/*.scss')
+        .pipe(sassCompiler().on('error', sassCompiler.logError))
         .pipe(autoprefixer({
-            //overrideBrowserslist: ['last 2 versions'],
-            browsers: ['last 2 versions'],
+            overrideBrowserslist: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(cssnano())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.stream())
-
+        .pipe(cssnano()) // Мінімізація CSS
+        .pipe(rename({suffix: '.min'})) // Додавання суфіксу .min до CSS
+        .pipe(gulp.dest('dist/css')) // Збереження у dist
+        .pipe(browserSync.stream()); // Оновлення браузера
+});
+gulp.task('bootstrap', function () {
+    return gulp.src([
+        'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+    ], { base: 'node_modules/bootstrap/dist' }) // базовий шлях для коректного збереження в dist
+        .pipe(gulp.dest('dist')); // Копіювання у dist
 });
 
+// Об'єднання і мінімізація скриптів
 gulp.task('scripts', function () {
     return gulp.src('app/js/*.js')
         .pipe(concat('scripts.js'))
         .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.stream())
+        .pipe(rename({suffix: '.min'})) // Додавання суфіксу .min до JS
+        .pipe(gulp.dest('dist/js')) // Збереження у dist
+        .pipe(browserSync.stream()); // Оновлення браузера
 });
 
+// Оптимізація зображень
 gulp.task('imgs', function () {
-    return gulp.src('app/img/*.+(jpg|jpeg|png|gif|PNG)')
+    return gulp.src('app/img/*.+(jpg|jpeg|png|gif)')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             interlaced: true
         }))
-        .pipe(gulp.dest('dist/imgs'));
+        .pipe(gulp.dest('dist/img'));
 });
 
+// Watcher для відстеження змін
 gulp.task('watch', function () {
     browserSync.init({
         server: {
-            baseDir: 'app'
+            baseDir: 'dist'
         },
-    })
-    gulp.watch('app/*.html', gulp.series('html')).on('change',browserSync.reload);
-    gulp.watch('app/js/*.js', gulp.series('scripts'));
-    gulp.watch('app/scss/*.scss', gulp.series('scss')).on('change',browserSync.reload);
-    gulp.watch('app/img/*.+(jpg|jpeg|png|gif)', gulp.series('imgs'));
+    });
+    gulp.watch('app/*.html', gulp.series('html')).on('change', browserSync.reload); // Watch HTML
+    gulp.watch('app/scss/*.scss', gulp.series('scss')); // Watch SCSS
+    gulp.watch('app/js/*.js', gulp.series('scripts')); // Watch JS
+    gulp.watch('app/img/*.+(jpg|jpeg|png|gif)', gulp.series('imgs')); // Watch Images
 });
 
-//+clean -> + ) in the end
-gulp.task('default',/*gulp.series('clean', */gulp.series( 'html', 'scss', 'scripts', 'imgs' , 'watch'));
+// Default task
+gulp.task('default', gulp.series('html','bootstrap', 'scss', 'scripts', 'imgs', 'watch'));

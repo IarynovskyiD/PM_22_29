@@ -1,0 +1,129 @@
+// Змінні
+$primary-color: #5a9996;
+$accent-color: #4e5d94;
+$background-color: #f2f2f2;
+$text-color: black;
+$highlight-color: #8ab2de;
+$gray-color: gray;
+
+// Основні стилі
+.section-line {
+  border-bottom: 2px solid $accent-color;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+
+
+.skill-name {
+  width: 150px; // Фиксированная ширина для всех названий
+  margin-right: 5px; // Отступ между названием и прогресс-баром
+  margin: 0;
+}
+
+.pb{
+  margin-bottom: 17px;
+}
+.progress {
+  position: relative;
+  height: 10px; // Высота прогресс-бара
+  background-color: $gray-color; // Серый цвет для незаполненной части
+  border-radius: 10px; // Скругленные углы
+
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background-color: $primary-color; // Основной цвет заполнения
+  border-radius: 10px 0 0 10px; // Скругление только с левой стороны
+  position: relative;
+  transition: width 0.5s ease-in-out;
+  width: 0;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+// Стилі для заголовка h3 з класом section-title
+.section-title {
+  font-weight: bold; // Жирный текст
+  font-size: 34px; // Размер шрифта
+  color: $text-color; // Цвет текста
+  padding: 10px; // Внутренние отступы
+  border-radius: 5px; // Скругленные углы
+}
+
+.contact {
+  display: flex;
+  flex-direction: column; // Устанавливаем элементы вертикально
+  align-items: center;
+  background-color: $background-color;
+  padding: 15px;
+  border-radius: 20px;
+  justify-content: space-between;
+}
+
+.contact-top {
+  display: flex;
+  justify-content: space-between; // Располагаем элементы на одном уровне
+  width: 100%; // Ширина для контейнера с верхними элементами
+  max-width: 800px; // Ограничим максимальную ширину
+  margin-bottom: 20px; // Отступ снизу для элемента с адресом
+}
+
+.contact-item {
+  background-color: $accent-color;
+  color: white;
+  padding: 10px 70px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  &:hover {
+    background-color: $highlight-color;
+  }
+  i {
+    margin-right: 10px; // Відступ між іконкою і текстом
+  }
+}
+
+.contact-item-large {
+  width: calc(100% - 40px); // Ширина, как у двух верхних блоков
+}
+// Змінні кольорів
+$primary-color: #5a9996; // Основний колір заповнення
+$border-color: #d0d0d0; // Колір контуру
+$bg-color: #fff; // Колір фону
+
+.progress-circle {
+  position: relative;
+  width: 100px; // Ширина кола
+  height: 100px; // Висота кола
+  background: conic-gradient(#d0d0d0 0% 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  text-align: center;
+  color: $text-color;
+  overflow: hidden;
+  transition: background 1s ease; // Плавна анімація заповнення
+  border: 5px solid $border-color; // Створення контуру
+
+  .circle-content {
+    position: relative;
+    z-index: 1; // Показує текст поверх анімації
+  }
+
+  // Анімація заповнення
+  &.fill {
+    background: conic-gradient(
+                    $primary-color 0% var(--progress),
+                    $bg-color var(--progress) 100%
+    );
+  }
+}
