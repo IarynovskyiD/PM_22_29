@@ -6,6 +6,11 @@ $text-color: black;
 $highlight-color: #8ab2de;
 $gray-color: gray;
 
+span{
+  color: $accent-color;
+}
+
+
 // Основні стилі
 .section-line {
   border-bottom: 2px solid $accent-color;
@@ -21,30 +26,33 @@ $gray-color: gray;
   margin: 0;
 }
 
-.pb{
-  margin-bottom: 17px;
-}
+.pb {
+   margin-bottom: 17px;
+ }
+
 .progress {
   position: relative;
-  height: 10px; // Высота прогресс-бара
-  background-color: $gray-color; // Серый цвет для незаполненной части
-  border-radius: 10px; // Скругленные углы
-
+  height: 10px; // Висота прогрес-бара
+  background-color: $gray-color; // Сірий колір для незаповненої частини
+  border-radius: 10px; // Скруглені кути
   overflow: hidden;
 }
+
 .progress-bar {
   height: 100%;
-  background-color: $primary-color; // Основной цвет заполнения
-  border-radius: 10px 0 0 10px; // Скругление только с левой стороны
+  background-color: $primary-color; // Основний колір заповнення
+  border-radius: 10px 0 0 10px; // Скруглення лише з лівого боку
   position: relative;
-  transition: width 0.5s ease-in-out;
-  width: 0;
+  transition: width 0.5s ease-in-out; // Плавна анімація
+  width: var(--progress-width, 0%); // Ширина задається як CSS-перемінна
 }
+
 
 .d-flex {
   display: flex;
   align-items: center;
 }
+
 
 // Стилі для заголовка h3 з класом section-title
 .section-title {
@@ -93,37 +101,83 @@ $gray-color: gray;
 .contact-item-large {
   width: calc(100% - 40px); // Ширина, как у двух верхних блоков
 }
-// Змінні кольорів
-$primary-color: #5a9996; // Основний колір заповнення
-$border-color: #d0d0d0; // Колір контуру
-$bg-color: #fff; // Колір фону
+
 
 .progress-circle {
   position: relative;
-  width: 100px; // Ширина кола
-  height: 100px; // Висота кола
-  background: conic-gradient(#d0d0d0 0% 100%);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
+  display: inline-block;
   text-align: center;
-  color: $text-color;
-  overflow: hidden;
-  transition: background 1s ease; // Плавна анімація заповнення
-  border: 5px solid $border-color; // Створення контуру
+  margin: 10px; /* Зменшуємо відстань між кругами */
+}
 
-  .circle-content {
-    position: relative;
-    z-index: 1; // Показує текст поверх анімації
-  }
+.circle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px; /* Розмір шрифту для відсотків та тексту */
+  font-weight: bold;
+  color: #5a5a5a; /* Колір тексту */
+  text-align: center;
+}
 
-  // Анімація заповнення
-  &.fill {
-    background: conic-gradient(
-                    $primary-color 0% var(--progress),
-                    $bg-color var(--progress) 100%
-    );
+.circle-content span {
+  display: block;
+  line-height: 1.2;
+}
+
+.circle-content span br + span {
+  font-size: 12px; /* Розмір шрифту для назви мови */
+  color: #999; /* Колір для тексту мови */
+}
+
+.easyPieChart {
+  position: relative;
+}
+
+
+
+
+
+.education-item {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
+
+.dot-line {
+  width: 20px;
+  flex-shrink: 0;
+  position: relative;
+  margin-right: 20px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: $primary-color;
+    border-radius: 100%;
+    margin-top: 5px;
+    margin-left: 3px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 2px;
+    height: 100%;
+    background-color: $accent-color;
+  }
+}
+
+
+
+
+

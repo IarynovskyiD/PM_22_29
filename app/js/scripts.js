@@ -1,20 +1,3 @@
-// script.js
-// script.js
-
-/*document.addEventListener('DOMContentLoaded', () => {
-    const circles = document.querySelectorAll('.progress-circle');
-
-    circles.forEach(circle => {
-        const percent = circle.getAttribute('data-percent');
-        const percentageText = `${percent}%`;
-
-        // Set the initial background
-        circle.style.background = `conic-gradient(#5a9996 0% ${percent}%, #ffffff ${percent}% )`;
-
-        // Update percentage text
-        circle.innerHTML = `${percentageText}<br>${circle.textContent.split('<br>')[1]}`;
-    });
-});*/
 
 document.addEventListener('DOMContentLoaded', function() {
     const contactLinks = document.querySelectorAll('.contact-link');
@@ -33,46 +16,46 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const skillSection = document.querySelector('.pb');
-    const progressBars = document.querySelectorAll('.progress-bar');
+    const skillSections = document.querySelectorAll('.pb');
 
-    skillSection.addEventListener('mouseover', function() {
+    skillSections.forEach(section => {
+        const progressBars = section.querySelectorAll('.progress-bar');
+
         progressBars.forEach(bar => {
-            // Отримуємо ширину, встановлену в стилях
+            // Встановлюємо початкову ширину з атрибуту data-width
             const width = bar.getAttribute('data-width');
             if (width) {
-                bar.style.width = width; // Задаємо ширину
-                bar.style.backgroundColor = '$primary-color'; // Змінюємо колір на зелений
+                bar.style.width = width;
             }
         });
-    });
-    skillSection.addEventListener('mouseout', function() {
-        progressBars.forEach(bar => {
-            bar.style.width = '0'; // Скидаємо ширину до 0
-            bar.style.backgroundColor = ''; // Скидаємо колір
+
+        section.addEventListener('mouseover', function() {
+            progressBars.forEach(bar => {
+                // Встановлюємо анімацію заповнення
+                const width = bar.getAttribute('data-width');
+                if (width) {
+                    bar.style.width = width; // Задаємо ширину
+                }
+            });
+        });
+
+        section.addEventListener('mouseout', function() {
+            progressBars.forEach(bar => {
+                // Скидаємо ширину до початкового значення
+                const width = bar.getAttribute('data-width');
+                if (width) {
+                    bar.style.width = '0'; // Скидаємо ширину до 0
+                }
+
+            });
         });
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const progressCircles = document.querySelectorAll('.progress-circle');
 
-    progressCircles.forEach(circle => {
-        const progress = circle.getAttribute('data-progress');
 
-        // Встановлюємо значення відсотка як CSS змінну
-        circle.style.setProperty('--progress', `${progress}%`);
 
-        // Додаємо клас 'fill' при наведенні
-        circle.addEventListener('mouseenter', function() {
-            this.classList.add('fill');
-        });
 
-        // Видаляємо клас 'fill' при виході
-        circle.addEventListener('mouseleave', function() {
-            this.classList.remove('fill');
-        });
-    });
-});
+
 
 
