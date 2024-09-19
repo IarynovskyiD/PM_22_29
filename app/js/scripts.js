@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    const contactLinks = document.querySelectorAll('.contact-link');
+    const contactLinks = document.querySelectorAll('.contact-item');
     contactLinks.forEach(link => {
         link.addEventListener('click', function() {
             const url = this.getAttribute('data-url');

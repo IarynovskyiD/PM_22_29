@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import cssnano from 'gulp-cssnano';
 import autoprefixer from 'gulp-autoprefixer';
+import inject from 'gulp-inject';
 import imagemin from 'gulp-imagemin';
 import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
@@ -15,7 +16,9 @@ const sassCompiler = gulpSass(sass);
 
 // Обробка HTML
 gulp.task('html', function () {
+    const sources = gulp.src(['dist/image/*'], { read: false });
     return gulp.src('app/*.html')
+        .pipe(inject(sources, { ignorePath: 'dist', addRootSlash: false })) // Додавання шляху до зображень
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
 });
@@ -52,14 +55,14 @@ gulp.task('scripts', function () {
 });
 
 // Оптимізація зображень
-gulp.task('imgs', function () {
-    return gulp.src('app/img/*.+(jpg|jpeg|png|gif)')
+gulp.task('images', function () {
+    return gulp.src ( "app/img/*.+(jpg|jpeg|png|gif)", { encoding: false })
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             interlaced: true
         }))
-        .pipe(gulp.dest('dist/img'));
+        .pipe(gulp.dest('dist/image'))
 });
 
 // Watcher для відстеження змін
@@ -72,8 +75,8 @@ gulp.task('watch', function () {
     gulp.watch('app/*.html', gulp.series('html')).on('change', browserSync.reload); // Watch HTML
     gulp.watch('app/scss/*.scss', gulp.series('scss')); // Watch SCSS
     gulp.watch('app/js/*.js', gulp.series('scripts')); // Watch JS
-    gulp.watch('app/img/*.+(jpg|jpeg|png|gif)', gulp.series('imgs')); // Watch Images
+    gulp.watch('app/image/*.+(jpg|jpeg|png|gif)', gulp.series('images')); // Watch Images
 });
 
 // Default task
-gulp.task('default', gulp.series('html','bootstrap', 'scss', 'scripts', 'imgs', 'watch'));
+gulp.task('default', gulp.series('html','bootstrap', 'scss', 'scripts', 'images', 'watch'));

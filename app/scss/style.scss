@@ -6,16 +6,25 @@ $text-color: black;
 $highlight-color: #8ab2de;
 $gray-color: gray;
 
+
 span{
   color: $accent-color;
 }
 
 
 // Основні стилі
-.section-line {
+
+.bi-sec-line{
+  font-weight: bold; // Жирный текст
+  font-size: 34px; // Размер шрифта
+  color: $primary-color; // Цвет текста
+  padding: 10px; // Внутренние отступы
+  border-radius: 8px; // Скругленные углы
+}
+.bi-pie-chart{
   border-bottom: 2px solid $accent-color;
   padding-bottom: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 200px;
 }
 
 
@@ -32,19 +41,32 @@ span{
 
 .progress {
   position: relative;
-  height: 10px; // Висота прогрес-бара
-  background-color: $gray-color; // Сірий колір для незаповненої частини
+  height: 8px; // Висота прогрес-бара
   border-radius: 10px; // Скруглені кути
-  overflow: hidden;
+  overflow: visible;
+
 }
+
+
 
 .progress-bar {
   height: 100%;
   background-color: $primary-color; // Основний колір заповнення
   border-radius: 10px 0 0 10px; // Скруглення лише з лівого боку
   position: relative;
-  transition: width 0.5s ease-in-out; // Плавна анімація
-  width: var(--progress-width, 0%); // Ширина задається як CSS-перемінна
+  overflow: visible;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -4px; /* Коло розміщується на правому краї */
+    transform: translate(50%, -50%); /* Центрування по вертикалі та зміщення вправо */
+    width: 16px; /* Розмір кола */
+    height: 16px; /* Розмір кола */
+    background-color: $primary-color; /* Колір кола */
+    border-radius: 50%; /* Робимо його колом */
+  }
 }
 
 
@@ -52,54 +74,75 @@ span{
   display: flex;
   align-items: center;
 }
+.icon-with-underline {
+  position: relative;  // Для позиціонування підкреслення
+  z-index: 1;  // Додаємо, щоб елемент був поверх
 
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;  // Розташування під іконкою
+    left: -10px;
+    right: -10px;
+    height: 5px;  // Товщина підкреслення
+    background-color: $primary-color;  // Колір підкреслення
+
+    z-index: -1;  // Накладаємо підкреслення під саму іконку
+  }
+
+  &:hover::after {
+    transform: scaleX(1);  // Підкреслення з'являється при наведенні
+  }
+}
+
+.section-line {
+  position: relative;  // Для забезпечення правильного позиціонування
+  border-bottom: 2px solid $accent-color;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  z-index: 0;  // Низький z-index, щоб іконка була поверх
+}
 
 // Стилі для заголовка h3 з класом section-title
 .section-title {
-  font-weight: bold; // Жирный текст
-  font-size: 34px; // Размер шрифта
-  color: $text-color; // Цвет текста
-  padding: 10px; // Внутренние отступы
-  border-radius: 5px; // Скругленные углы
+  font-weight: bold; // Жирний текст
+  font-size: 34px; // Розмір шрифта
+  color: $text-color; // Колір тексту
+  padding: 10px; // Внутрішні відступи
+  border-radius: 5px; // Скруглені кути
 }
 
-.contact {
+.contact-container {
   display: flex;
-  flex-direction: column; // Устанавливаем элементы вертикально
-  align-items: center;
-  background-color: $background-color;
-  padding: 15px;
-  border-radius: 20px;
-  justify-content: space-between;
-}
-
-.contact-top {
-  display: flex;
-  justify-content: space-between; // Располагаем элементы на одном уровне
-  width: 100%; // Ширина для контейнера с верхними элементами
-  max-width: 800px; // Ограничим максимальную ширину
-  margin-bottom: 20px; // Отступ снизу для элемента с адресом
+  flex-wrap: wrap;
+  gap: 40px; /* Проміжок між елементами */
 }
 
 .contact-item {
-  background-color: $accent-color;
-  color: white;
-  padding: 10px 70px;
-  border-radius: 20px;
   display: flex;
-  justify-content: center;
-  width: 100%;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $accent-color; /* Колір фону */
+  color: white; /* Колір тексту */
+  border-radius: 30px; /* Закруглені краї */
+  flex-grow: 1; /* Дозволяє рівномірно займати місце */
+  min-width: 200px; /* Мінімальна ширина для блоків */
+  justify-content: center; /* Вирівнювання по центру */
 
-  &:hover {
-    background-color: $highlight-color;
-  }
   i {
-    margin-right: 10px; // Відступ між іконкою і текстом
+    color: $primary-color; /* Колір іконки */
+    margin-right: 10px; /* Відступ для іконки */
+    font-size: 1.5rem;
   }
-}
 
-.contact-item-large {
-  width: calc(100% - 40px); // Ширина, как у двух верхних блоков
+  span {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  &.full-width {
+    flex-basis: 100%; /* Робимо цей елемент на всю ширину */
+  }
 }
 
 
@@ -141,7 +184,7 @@ span{
 
 .education-item {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   position: relative;
 
   &:last-child {
@@ -172,12 +215,54 @@ span{
     top: 20px;
     left: 10px;
     width: 2px;
-    height: 100%;
+    height: 80%;
     background-color: $accent-color;
   }
 }
 
 
+.profile-img {
+  width: 100%;
+  height: auto; /* Зберігати пропорції при зменшенні */
+  max-width: 300px; /* Максимальна ширина */
+}
+
+/* Виправимо пропорційний контейнер для фото */
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
 
 
+/* Виправимо загальні стилі для адаптивності */
+.header-text {
+  font-size: calc(2.5rem + 1vw); /* Адаптивний розмір тексту */
+}
+.subheader-text {
+  font-size: calc(1.5rem + 0.5vw);
+}
 
+.skill-name {
+  font-size: 1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Адаптивні відступи для контейнерів */
+@media (max-width: 768px) {
+  .header-text {
+    text-align: center;
+  }
+  .contact-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-muted, .col-md-3, .col-md-8 {
+    text-align: center;
+  }
+}
