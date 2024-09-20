@@ -36,7 +36,7 @@ span{
 }
 
 .pb {
-   margin-bottom: 17px;
+   margin-bottom: 1px;
  }
 
 .progress {
@@ -46,15 +46,14 @@ span{
   overflow: visible;
 
 }
-
-
-
 .progress-bar {
   height: 100%;
+  width: 0;
   background-color: $primary-color; // Основний колір заповнення
   border-radius: 10px 0 0 10px; // Скруглення лише з лівого боку
   position: relative;
   overflow: visible;
+
 
   &::after {
     content: '';
@@ -81,17 +80,13 @@ span{
   &::after {
     content: '';
     position: absolute;
-    bottom: -14px;  // Розташування під іконкою
+    bottom: -15px;  // Розташування під іконкою
     left: -10px;
     right: -10px;
     height: 5px;  // Товщина підкреслення
     background-color: $primary-color;  // Колір підкреслення
 
     z-index: -1;  // Накладаємо підкреслення під саму іконку
-  }
-
-  &:hover::after {
-    transform: scaleX(1);  // Підкреслення з'являється при наведенні
   }
 }
 
@@ -115,7 +110,7 @@ span{
 .contact-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px; /* Проміжок між елементами */
+  gap: 25px; /* Проміжок між елементами */
 }
 
 .contact-item {
@@ -265,4 +260,19 @@ span{
   .text-muted, .col-md-3, .col-md-8 {
     text-align: center;
   }
+}
+
+
+.collapsible{
+  cursor: pointer;
+  width: 90%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+.content{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
