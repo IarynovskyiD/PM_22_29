@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const coll = document.getElementsByClassName('collapsible');
 
@@ -46,8 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
-
 
 /*
 document.addEventListener('DOMContentLoaded', function() {
