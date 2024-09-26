@@ -51,6 +51,54 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+$(document).ready(function() {
+    // Ініціалізація easyPieChart
+    function initPieCharts() {
+        $('.progress-circle').each(function() {
+            var $this = $(this);
+            var language = $this.data('text'); // Отримуємо назву мови з атрибуту data-text
+            var percent = $this.data('percent'); // Отримуємо відсоток з атрибуту data-percent
+
+            $this.easyPieChart({
+                barColor: '#5a9996', // Колір заповнення
+                trackColor: '#f5f5f5', // Колір фону
+                scaleColor: false, // Вимкнути шкалу
+                lineWidth: 7, // Ширина лінії
+                size: 94, // Розмір круга
+                animate: 1000, // Час анімації в мілісекундах
+                onStep: function(from, to, percent) {
+                    // Оновлюємо текст всередині кола з відсотками та мовою
+                    $(this.el).find('.circle-content span').html(Math.round(percent) + '%<br>' + language);
+                }
+            });
+        });
+    }
+
+    // Ініціалізуємо графіки при завантаженні сторінки
+    initPieCharts();
+
+    // Додаємо обробник події на кнопку з класом .animateButton
+    $('.collapsible.triggerAnimation').on('click', function() {
+
+        // Для кожного графіка спочатку скидаємо на 0%, а потім анімуємо до реального відсотка
+        $('.progress-circle').each(function() {
+            var $this = $(this);
+            var percent = $this.data('percent'); // Отримуємо відсоток
+
+            // Оновлюємо до 0, щоб перезапустити анімацію
+            $this.data('easyPieChart').update(0);
+
+            // Використовуємо setTimeout для паузи між скиданням і перезапуском
+            setTimeout(function() {
+                $this.data('easyPieChart').update(percent); // Оновлюємо на реальний відсоток
+            }, 1); // Пауза на 200 мс між оновленням
+        });
+    });
+});
+
+
+
 /*
 document.addEventListener('DOMContentLoaded', function() {
     let skillSections = document.querySelectorAll('.pb');

@@ -16,7 +16,7 @@
 <body>
 <!-- Header Section -->
 <header class="container bg-light py-2">
-    <div class="row ">
+    <div class="row">
         <div class="col-md-8">
             <div>
                 <div class="header-text display-2 fw-bold  text-muted">RALPH S. GARCIA</div>
@@ -82,7 +82,7 @@
                 <div class="education-item">
                     <div class="dot-line"></div>
                         <div class="d-flex mb-4">
-                            <div class="text-muted col-md-3 me-3">
+                            <div class="text-muted col-md-3 me-3 up">
                                 <div class="fw-bold fst-italic">Creative Agency</div>
                                 <div class="fst-italic">Chicago</div>
                                 <div class="fw-bold" style="color: #5a9996">2020 - Present</div>
@@ -239,27 +239,28 @@
                 </div>
             </div>
             <h3 class="section-title section-line ">
-                <i class="bi-book icon-with-underline"></i> <button class="collapsible"> LANGUAGES</button>
+                <i class="bi-book icon-with-underline"></i> <button class="collapsible triggerAnimation"> LANGUAGES</button>
             </h3>
             <div class="content">
                 <div class="d-flex justify-content-between mb-3">
-                    <div class="progress-circle" data-percent="85" data-text="English">
+                    <div class="progress-circle" data-target="circle1" data-percent="85" data-text="English">
                         <div class="circle-content">
                             <span>85%<br>English</span>
                         </div>
                     </div>
-                    <div class="progress-circle" data-percent="65" data-text="German">
+                    <div class="progress-circle" data-target="circle1" data-percent="65" data-text="German">
                         <div class="circle-content">
                             <span>65%<br>German</span>
                         </div>
                     </div>
-                    <div class="progress-circle" data-percent="45" data-text="Spanish">
+                    <div class="progress-circle" data-target="circle1" data-percent="45" data-text="Spanish">
                         <div class="circle-content">
                             <span>45%<br>Spanish</span>
                         </div>
                     </div>
                 </div>
             </div>
+
             <h3 class="section-title  section-line">
                 <i class="bi bi-person-workspace icon-with-underline"></i><button class="collapsible"> REFERENCES</button>
             </h3>
@@ -286,69 +287,6 @@
         </div>
     </div>
 </div>
-<!--
-<div id="chartContainer" style="display: none;">
-
-    <div class="progress-circle" data-text="JavaScript" data-percent="75">
-        <div class="circle-content">
-            <span></span>
-        </div>
-    </div>
-</div>
-
-<button id="showChart">Показати діаграму</button>
-
-<script>
-    $(document).ready(function(){
-        $('#showChart').click(function() {
-            // Розгортання блоку
-            $('#chartContainer').slideDown(400, function() {
-                // Після того, як блок розгорнувся, запускаємо анімацію діаграм
-                $('.progress-circle').each(function() {
-                    var $this = $(this);
-                    var language = $this.data('text'); // Отримуємо назву мови з атрибуту data-text
-                    var percent = $this.data('percent'); // Отримуємо відсоток з атрибуту data-percent
-
-                    $this.easyPieChart({
-                        barColor: '#5a9996', // Колір заповнення
-                        trackColor: '#f5f5f5', // Колір фону
-                        scaleColor: false, // Вимкнути шкалу
-                        lineWidth: 7, // Ширина лінії
-                        size: 94, // Розмір круга
-                        animate: 1000, // Час анімації в мілісекундах
-                        onStep: function(from, to, percent) {
-                            // Оновлюємо текст всередині кола з відсотками та мовою
-                            $(this.el).find('.circle-content span').html(Math.round(percent) + '%<br>' + language);
-                        }
-                    });
-                });
-            });
-        });
-    });
-</script>-->
-
-<script>
-    $(document).ready(function(){
-        $('.progress-circle').each(function() {
-            var $this = $(this);
-            var language = $this.data('text'); // Отримуємо назву мови з атрибуту data-text
-            var percent = $this.data('percent'); // Отримуємо відсоток з атрибуту data-percent
-
-            $this.easyPieChart({
-                barColor: '#5a9996', // Колір заповнення
-                trackColor: '#f5f5f5', // Колір фону
-                scaleColor: false, // Вимкнути шкалу
-                lineWidth: 7, // Ширина лінії
-                size: 94, // Розмір круга
-                animate: 1000, // Час анімації в мілісекундах
-                onStep: function(from, to, percent) {
-                    // Оновлюємо текст всередині кола з відсотками та мовою
-                    $(this.el).find('.circle-content span').html(Math.round(percent) + '%<br>' + language);
-                }
-            });
-        });
-    });
-</script>
 <script src="/js/scripts.min.js" rel="stylesheet"></script>
 </body>
 </html>
