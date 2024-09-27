@@ -24,9 +24,14 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
+    "jquery": "^3.7.1",
     "rimraf": "^6.0.1",
     "sass": "^1.78.0",
     "semantic-ui-sass": "^2.4.2"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
+  }
 }

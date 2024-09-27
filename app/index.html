@@ -14,6 +14,9 @@
     <script src="/js/jquery.easypiechart.min.js" rel="stylesheet"></script>
 </head>
 <body>
+
+
+
 <!-- Header Section -->
 <header class="container bg-light py-2">
     <div class="row">
@@ -40,204 +43,38 @@
     <div class="row">
         <!-- Left Column: Education & Job Experience -->
         <div class="col-md-8">
-            <h3 class="section-title section-line ">
+            <h3 class="section-title section-line">
                 <i class="icon-with-underline bi-person-workspace"></i> <button class="collapsible">EDUCATION</button>
             </h3>
-            <div class="content">
-               ` <div class="education-item">
-                    <div class="dot-line"></div>
-                    <div class="d-flex  mb-4">
-                        <div class="text-muted col-md-3 me-3">
-                            <div class="fw-bold fst-italic">Stanford University</div>
-                            <div class="fw-bold" style="color: #5a9996">2011 - 2013</div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5><p>Master Degree Graduate in Design</p></h5>
-                            <p>Lorem Ipsum has been the industry's standard
-                                dummy text ever since the 1500s, when an unknowr printer took a galley of type and scrambled it to
-                                make a type specimen book.</p>
-                        </div>
-                    </div>
-                </div>`
-                <div class="education-item">
-                    <div class="dot-line"></div>
-                    <div class="d-flex mb-4">
-                        <div class="text-muted col-md-3 me-3">
-                            <div class="fw-bold fst-italic">Chicago University</div>
-                            <div class="fw-bold" style="color: #5a9996">2007 - 2010</div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5><p>Bachelor Degree in Design</p></h5>
-                            <p>Lorem Ipsum has been the industry's standard
-                                dummy text ever since the 1500s, when an unknowr printer took a galley of type and scrambled it to
-                                make a type specimen book.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="content" id="education"></div>
             <h3 class="section-title section-line">
                 <i class="icon-with-underline bi-hammer"></i> <button class="collapsible">JOB EXPERIENCE</button>
             </h3>
-            <div class="content">
-                <div class="education-item">
-                    <div class="dot-line"></div>
-                        <div class="d-flex mb-4">
-                            <div class="text-muted col-md-3 me-3 up">
-                                <div class="fw-bold fst-italic">Creative Agency</div>
-                                <div class="fst-italic">Chicago</div>
-                                <div class="fw-bold" style="color: #5a9996">2020 - Present</div>
-                            </div>
-                            <div class="col-md-8">
-                                <h5><p>Senior Web Designer</p></h5>
-                                <p>
-                                    Lorem Ipsum has been the industry's standard dummy text since the 1500s.
-                                    Lorem Ipsum has been the industry's standard dummy text since the 1500s.
-                                    Lorem Ipsum has been the industry's standard dummy text since the 1500s.
-                                    Lorem Ipsum has been the industry's standard dummy text since the 1500s.
-                                    Lorem Ipsum has been the industry's standard dummy text since the 1500s.
-                                    Lorem Ipsum has been the industry's standard dummy text since the 1500s.
-                                </p>
-                            </div>
-                        </div>
-                </div>
-                <div class="education-item">
-                    <div class="dot-line"></div>
-                        <div class="d-flex mb-4">
-                            <div class="text-muted col-md-3 me-3">
-                                <div class="fw-bold fst-italic">Creative Market</div>
-                                <div class="fst-italic">United Kingdom</div>
-                                <div class="fw-bold" style="color: #5a9996">2015 - 2020</div>
-                            </div>
-                            <div class="col-md-8">
-                                <h5><p>Graphic Designer</p></h5>
-                                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                </p>
-                            </div>
-                        </div>
-                </div>
-                <div class="education-item">
-                    <div class="dot-line"></div>
-                        <div class="d-flex mb-4">
-                            <div class="text-muted col-md-3 me-3">
-                                <div class="fw-bold fst-italic">Marketing Agency</div>
-                                <div class="fst-italic">United Kingdom</div>
-                                <div class="fw-bold" style="color: #5a9996">2013 - 2015</div>
-                            </div>
-                            <div class="col-md-8">
-                                <h5><p>Marketing Manager</p></h5>
-                                <p>Lorem Ipsum has been the industry's standard
-                                    dummy text ever since the 1500s, when an unknowr printer took a galley of type and scrambled it to
-                                    make a type specimen book.</p>
-                            </div>
-                        </div>
-                </div>
-            </div>
+            <div class="content" id="job-experience"></div>
             <footer class="contact">
                 <div class="contact-container">
                     <div class="contact-item" data-url="tel:+380508485120">
-                        <i class="bi bi-telephone-fill"> </i>+380-50-848-51-20
+                        <i class="bi bi-telephone-fill"></i>+380-50-848-51-20
                     </div>
                     <div class="contact-item" data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                         <i class="bi bi-globe"></i> www.yourwebsite.com
                     </div>
                     <div class="contact-item full-width" data-url="https://www.google.com/maps?q=769+Prudence+Street,+Lincoln+Park,+MI+48146">
-                        <i class="bi bi-geo-alt-fill"></i>  769 Prudence Street Lincoln Park, MI 48146
+                        <i class="bi bi-geo-alt-fill"></i> 769 Prudence Street Lincoln Park, MI 48146
                     </div>
                 </div>
             </footer>
-
         </div>
         <!-- Right Column: Skills, Hobbies, Languages, References -->
         <div class="col-md-4">
             <h3 class="section-title section-line">
                 <i class="icon-with-underline bi-pie-chart-fill"></i><button class="collapsible">SKILLS</button>
             </h3>
-            <div class="pb content">
-                <div class="d-flex align-items-center mb-2">
-                    <div class="col-md-12">
-                        <!-- Блок Adobe Photoshop -->
-                        <div class="d-flex align-items-center mb-3">
-                            <p class="skill-name">Adobe Photoshop</p>
-                            <div class="progress flex-grow-1">
-                                <div class="progress-bar" role="progressbar" data-width="90%"></div>
-                            </div>
-                        </div>
-                        <!-- Блок Adobe Illustrator -->
-                        <div class="d-flex align-items-center mb-3">
-                            <p class="skill-name">Adobe Illustrator</p>
-                            <div class="progress flex-grow-1">
-                                <div class="progress-bar" role="progressbar" data-width="65%"></div>
-                            </div>
-                        </div>
-                        <!-- Блок Microsoft Word -->
-                        <div class="d-flex align-items-center mb-3">
-                            <p class="skill-name">Microsoft Word</p>
-                            <div class="progress flex-grow-1">
-                                <div class="progress-bar" role="progressbar" data-width="85%"></div>
-                            </div>
-                        </div>
-                        <!-- Блок Microsoft PowerPoint -->
-                        <div class="d-flex align-items-center mb-3">
-                            <p class="skill-name">Microsoft PowerPoint</p>
-                            <div class="progress flex-grow-1">
-                                <div class="progress-bar" role="progressbar" data-width="70%"></div>
-                            </div>
-                        </div>
-                        <!-- Блок HTML5/CSS3 -->
-                        <div class="d-flex align-items-center mb-3">
-                            <p class="skill-name">HTML5/CSS3</p>
-                            <div class="progress flex-grow-1">
-                                <div class="progress-bar" role="progressbar" data-width= "80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h3 class="section-title section-line ">
-                <i class="icon-with-underline bi-flag"></i><button class="collapsible"> HOBBIES</button>
+            <div class="content" id="skills"></div>
+            <h3 class="section-title section-line">
+                <i class="icon-with-underline bi-flag"></i><button class="collapsible">HOBBIES</button>
             </h3>
-            <div class="content">
-                <div class="pb">
-                    <div class="d-flex align-items-center mb-2">
-                        <div class="col-md-12">
-                            <div class="d-flex align-items-center mb-3">
-                                <p class="skill-name">Book Reading</p>
-                                <div class="progress flex-grow-1">
-                                    <div class="progress-bar" role="progressbar" data-width="90%"></div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <p class="skill-name">Travelling</p>
-                                <div class="progress flex-grow-1">
-                                    <div class="progress-bar" role="progressbar" data-width="65%"></div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <p class="skill-name">Playing Chess</p>
-                                <div class="progress flex-grow-1">
-                                    <div class="progress-bar" role="progressbar" data-width="85%"></div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <p class="skill-name">Painting</p>
-                                <div class="progress flex-grow-1">
-                                    <div class="progress-bar" role="progressbar" data-width="70%"></div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <p class="skill-name">Graphic Design</p>
-                                <div class="progress flex-grow-1">
-                                    <div class="progress-bar" role="progressbar" data-width="83%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="content" id="hobbies"></div>
             <h3 class="section-title section-line ">
                 <i class="bi-book icon-with-underline"></i> <button class="collapsible triggerAnimation"> LANGUAGES</button>
             </h3>
@@ -260,33 +97,14 @@
                     </div>
                 </div>
             </div>
-
-            <h3 class="section-title  section-line">
-                <i class="bi bi-person-workspace icon-with-underline"></i><button class="collapsible"> REFERENCES</button>
+            <h3 class="section-title section-line">
+                <i class="bi bi-person-workspace icon-with-underline"></i><button class="collapsible">REFERENCES</button>
             </h3>
-            <div class="content">
-                <div class="education-item">
-                    <div class="dot-line"></div>
-                        <div>
-                            <strong>Darwin B. Magana</strong><br>
-                            <div style="color: #5a9996"><strong>2813 Shobe Lane Mancos, CO.</strong><br></div>
-                            Tel: +1-970-533-3393<br>
-                            <p>Email: www.yourwebsite.com</p>
-                        </div>
-                </div>
-                <div class="education-item">
-                    <div class="dot-line"></div>
-                         <div>
-                            <strong>Jane Doe</strong><br>
-                            <div style="color: #5a9996"><strong>914 Ivy Street Centennial, CO.</strong><br></div>
-                            Tel: +1-908-987-5103<br>
-                            Email: www.yourwebsite.com
-                         </div>
-                </div>
-            </div>
+            <div class="content" id="references"></div>
         </div>
     </div>
 </div>
+
 <script src="/js/scripts.min.js" rel="stylesheet"></script>
 </body>
 </html>
