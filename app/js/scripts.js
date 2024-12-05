@@ -119,7 +119,7 @@ $(document).ready(function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('http://localhost:4000/data')
+    fetch('http://localhost:1488/data')
         .then(response => response.json())
         .then(data => {
             // Populate Education
@@ -184,17 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 `).join('');
             hobbiesContainer.innerHTML = hobbiesHTML;
-
-            // Populate Languages
-            /*const languagesContainer = document.getElementById('languages');
-            const languagesHTML = data.languages.map(lang => `
-                    <div class="progress-circle" data-target="circle1" data-percent="${lang.level}" data-text="${lang.name}">
-                        <div class="circle-content">
-                            <span>${lang.level}%<br>${lang.name}</span>
-                        </div>
-                    </div>
-                `).join('');
-            languagesContainer.innerHTML = languagesHTML;*/
 
             // Populate References
             const referencesContainer = document.getElementById('references');
